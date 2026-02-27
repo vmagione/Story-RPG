@@ -9,8 +9,8 @@ var flags := {}
 var history: Array[String] = []
 var current_scene_id := ""
 
-func create_character(name: String, class_name: String, ancestry: String) -> void:
-	var class_data: Dictionary = CampaignData.get_classes().get(class_name, {})
+func create_character(name: String, player_class_name: String, ancestry: String) -> void:
+	var class_data: Dictionary = CampaignData.get_classes().get(player_class_name, {})
 	var ancestry_data: Dictionary = CampaignData.get_ancestries().get(ancestry, {})
 	var base_attributes := {
 		"might": int(class_data.get("might", 0)),
@@ -23,7 +23,7 @@ func create_character(name: String, class_name: String, ancestry: String) -> voi
 
 	character = {
 		"name": name,
-		"class": class_name,
+		"class": player_class_name,
 		"ancestry": ancestry,
 		"attributes": base_attributes,
 		"hp": 12 + int(base_attributes["might"]),
@@ -32,7 +32,7 @@ func create_character(name: String, class_name: String, ancestry: String) -> voi
 
 	flags.clear()
 	history.clear()
-	_add_history("%s inicia a campanha como %s %s." % [name, ancestry, class_name])
+	_add_history("%s inicia a campanha como %s %s." % [name, ancestry, player_class_name])
 	go_to_scene("tavern_start")
 
 func go_to_scene(scene_id: String) -> void:

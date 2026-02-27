@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://baojaohwfd1gk"]
 
-[ext_resource type="Script" path="res://Scripts/ui/main_game.gd" id="1_0v65n"]
+[ext_resource type="Script" uid="uid://d1kp8hglqlbi" path="res://Scripts/ui/main_game.gd" id="1_0v65n"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -23,6 +23,8 @@ offset_left = -190.0
 offset_top = -180.0
 offset_right = 190.0
 offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Title" type="Label" parent="CharacterCreation"]
 layout_mode = 2
@@ -109,10 +111,10 @@ size_flags_vertical = 3
 
 [node name="SceneCanvas" type="Control" parent="GameLayout/RightPanel/SceneArea"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 420)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_minimum_size = Vector2(640, 420)
 
 [node name="InteractionPanel" type="PanelContainer" parent="GameLayout/RightPanel"]
 unique_name_in_owner = true
@@ -135,5 +137,5 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-fit_content = true
 bbcode_enabled = true
+fit_content = true

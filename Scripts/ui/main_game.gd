@@ -32,8 +32,8 @@ func _ready() -> void:
 	interaction_panel.visible = false
 
 func _populate_creation_options() -> void:
-	for class_name: String in CampaignData.get_classes().keys():
-		class_select.add_item(class_name)
+	for player_class_name: String in CampaignData.get_classes().keys():
+		class_select.add_item(player_class_name)
 	for ancestry_name: String in CampaignData.get_ancestries().keys():
 		ancestry_select.add_item(ancestry_name)
 
