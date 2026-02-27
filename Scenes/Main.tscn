@@ -1,0 +1,139 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/ui/main_game.gd" id="1_0v65n"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0v65n")
+
+[node name="CharacterCreation" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -180.0
+offset_right = 190.0
+offset_bottom = 180.0
+
+[node name="Title" type="Label" parent="CharacterCreation"]
+layout_mode = 2
+text = "Criar Personagem"
+horizontal_alignment = 1
+
+[node name="NameInput" type="LineEdit" parent="CharacterCreation"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Nome do personagem"
+
+[node name="ClassLabel" type="Label" parent="CharacterCreation"]
+layout_mode = 2
+text = "Classe"
+
+[node name="ClassSelect" type="OptionButton" parent="CharacterCreation"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AncestryLabel" type="Label" parent="CharacterCreation"]
+layout_mode = 2
+text = "Ancestralidade"
+
+[node name="AncestrySelect" type="OptionButton" parent="CharacterCreation"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CharacterCreation"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Iniciar Campanha"
+
+[node name="GameLayout" type="HSplitContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 315
+
+[node name="LeftPanel" type="VBoxContainer" parent="GameLayout"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="CharacterLabel" type="RichTextLabel" parent="GameLayout/LeftPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 260)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="HistoryTitle" type="Label" parent="GameLayout/LeftPanel"]
+layout_mode = 2
+text = "Histórico recente"
+
+[node name="HistoryLabel" type="RichTextLabel" parent="GameLayout/LeftPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 340)
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="RightPanel" type="VBoxContainer" parent="GameLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SceneTitle" type="Label" parent="GameLayout/RightPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cena"
+
+[node name="NarrativeLabel" type="RichTextLabel" parent="GameLayout/RightPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="SceneArea" type="PanelContainer" parent="GameLayout/RightPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SceneCanvas" type="Control" parent="GameLayout/RightPanel/SceneArea"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(640, 420)
+
+[node name="InteractionPanel" type="PanelContainer" parent="GameLayout/RightPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="InteractionContent" type="VBoxContainer" parent="GameLayout/RightPanel/InteractionPanel"]
+layout_mode = 2
+
+[node name="InteractionTitle" type="Label" parent="GameLayout/RightPanel/InteractionPanel/InteractionContent"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Interações"
+
+[node name="InteractionButtons" type="VBoxContainer" parent="GameLayout/RightPanel/InteractionPanel/InteractionContent"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FeedbackLabel" type="RichTextLabel" parent="GameLayout/RightPanel/InteractionPanel/InteractionContent"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+fit_content = true
+bbcode_enabled = true
