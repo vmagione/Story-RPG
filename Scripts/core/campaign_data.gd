@@ -221,7 +221,8 @@ static func get_scene(scene_id: String) -> Dictionary:
 							"attribute": "might",
 							"on_success": {
 								"log": "Você derrota o bandido e encontra um selo de caravana.",
-								"set_flags": ["bandit_defeated"]
+								"set_flags": ["bandit_defeated"],
+								"goto": "tavern_end"
 							},
 							"on_failure": {
 								"log": "Você é ferido e recua para planejar melhor.",
@@ -273,6 +274,25 @@ static func get_scene(scene_id: String) -> Dictionary:
 							"label": "Escapar",
 							"description": "Você salta pela janela e cai no beco.",
 							"goto": "alley_ambush"
+						}
+					]
+				}
+			]
+		},
+		"tavern_end": {
+			"title": "Consequências da História",
+			"narrative": "Você vence o bandido e a vila te agradece.",
+			"elements": [
+				{
+					"id": "tks_button",
+					"name": "Obrigado!",
+					"color": Color("708090"),
+					"pos": Vector2(520, 120),
+					"interactions": [
+						{
+							"id": "escape_window",
+							"label": "Você venceu!",
+							"description": "Você finalizou a história."
 						}
 					]
 				}
